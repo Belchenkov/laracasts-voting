@@ -58,7 +58,10 @@
 
         <main class="container mx-auto flex max-w-custom">
             <div class="w-70 mr-5">
-                Add idea form goes here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci aspernatur assumenda consequuntur corporis cum cumque delectus deleniti dolor dolore dolores ea ex facere fuga iusto maxime nesciunt officia pariatur perferendis quibusdam ratione reiciendis rem sapiente soluta tempora tempore, ut voluptate?
+                Add idea form goes here. Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                Adipisci aspernatur assumenda consequuntur corporis cum cumque delectus deleniti dolor dolore
+                dolores ea ex facere fuga iusto maxime nesciunt officia pariatur perferendis quibusdam ratione
+                reiciendis rem sapiente soluta tempora tempore, ut voluptate?
             </div>
             <div class="w-175">
                 <nav class="flex items-center justify-between text-xs">
