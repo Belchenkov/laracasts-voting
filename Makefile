@@ -23,3 +23,6 @@ db-migrate-seed:
 
 db-refresh:
 	docker-compose exec php-cli php artisan migrate:refresh --seed
+
+test:
+	docker-compose exec php-cli ./vendor/bin/phpunit
