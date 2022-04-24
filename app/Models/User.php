@@ -50,7 +50,7 @@ class User extends Authenticatable
     /**
      * @throws \Exception
      */
-    public function getAvatarAttribute(): string
+    public function getAvatar(): string
     {
         $firstCharacter = $this->email[0];
 

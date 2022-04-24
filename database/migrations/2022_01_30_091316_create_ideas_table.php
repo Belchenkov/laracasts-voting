@@ -21,6 +21,7 @@ class CreateIdeasTable extends Migration
 
             $table->foreignId('user_id')->constrained();
             $table->foreignId('category_id')->constrained();
+            $table->foreignId('status_id')->constrained();
             $table->timestamps();
         });
     }
