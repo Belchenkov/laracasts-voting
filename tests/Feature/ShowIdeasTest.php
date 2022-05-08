@@ -94,13 +94,13 @@ class ShowIdeasTest extends TestCase
 
         $response = $this->get('/');
 
-        $response->assertSee($ideaOne->title);
-        $response->assertDontSee($ideaEleven->title);
+        $response->assertDontSee($ideaOne->title);
+        $response->assertSee($ideaEleven->title);
 
         $response = $this->get('/?page=2');
 
-        $response->assertSee($ideaEleven->title);
-        $response->assertDontSee($ideaOne->title);
+        $response->assertDontSee($ideaEleven->title);
+        $response->assertSee($ideaOne->title);
     }
 
     /** @test */
