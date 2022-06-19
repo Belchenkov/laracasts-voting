@@ -51,6 +51,22 @@ class Idea extends Model
         return $this->belongsToMany(User::class, 'votes');
     }
 
+    public function vote(User $user)
+    {
+        Vote::create([
+            'idea_id' => $this->id,
+            'user_id' => $user->id,
+        ]);
+    }
+
+    public function removeVote(User $user)
+    {
+        Vote::where('idea_id', $this->id)
+            ->where('user_id', $user->id)
+            ->first()
+            ->delete();
+    }
+
     public function isVotedByUser(?User $user)
     {
         if (!$user) return false;
