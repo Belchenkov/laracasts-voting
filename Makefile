@@ -21,6 +21,9 @@ db-migrate:
 db-migrate-seed:
 	docker-compose exec php-cli php artisan migrate --seed
 
+db-seed:
+	docker-compose exec php-cli php artisan db:seed --force
+
 db-refresh:
 	docker-compose exec php-cli php artisan migrate:refresh --seed
 
