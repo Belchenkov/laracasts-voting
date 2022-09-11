@@ -2,20 +2,22 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Status;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
 use Livewire\Component;
-use Livewire\Redirector;
 
 class StatusFilters extends Component
 {
     public $status = 'All';
+    public $statusCount;
 
     protected $queryString = [
         'status',
     ];
 
-    public function setStatus(string $newStatus)
+    public function setStatus(string $newStatus): RedirectResponse
     {
         $this->status = $newStatus;
 
@@ -26,6 +28,8 @@ class StatusFilters extends Component
 
     public function mount(): void
     {
+        $this->statusCount = Status::getCount();
+
         if (Route::currentRouteName() === 'idea.show') {
             $this->status = null;
             $this->queryString = [];
