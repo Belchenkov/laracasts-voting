@@ -3,23 +3,19 @@
 namespace App\Http\Livewire;
 
 use App\Models\Status;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
 use Livewire\Component;
 
 class StatusFilters extends Component
 {
-    public $status = 'All';
+    public $status;
     public $statusCount;
 
-    protected $queryString = [
-        'status',
-    ];
-
-    public function setStatus(string $newStatus): RedirectResponse
+    public function setStatus(string $newStatus)
     {
         $this->status = $newStatus;
+        $this->emit('queryStringUpdatedStatus', $this->status);
 
         return redirect()->route('idea.index', [
             'status' => $this->status,
@@ -29,10 +25,10 @@ class StatusFilters extends Component
     public function mount(): void
     {
         $this->statusCount = Status::getCount();
+        $this->status = request()->status ?? 'All';
 
         if (Route::currentRouteName() === 'idea.show') {
             $this->status = null;
-            $this->queryString = [];
         }
     }
 
