@@ -3,6 +3,7 @@
 namespace App\Http\Livewire;
 
 use App\Models\Status;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Route;
 use Illuminate\View\View;
 use Livewire\Component;
@@ -12,7 +13,7 @@ class StatusFilters extends Component
     public $status;
     public $statusCount;
 
-    public function setStatus(string $newStatus)
+    public function setStatus(string $newStatus): RedirectResponse
     {
         $this->status = $newStatus;
         $this->emit('queryStringUpdatedStatus', $this->status);
