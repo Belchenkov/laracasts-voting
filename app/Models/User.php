@@ -69,6 +69,15 @@ class User extends Authenticatable
             .'.png';
     }
 
+    public function isAdmin(): bool
+    {
+        return in_array($this->email, [
+            'jeffrey@laracasts.com',
+            'andre_madarang@hotmail.com',
+            'adrian@laracasts.com,'
+        ]);
+    }
+
     public function votes(): BelongsToMany
     {
         return $this->belongsToMany(Idea::class, 'votes');
