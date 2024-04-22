@@ -49,6 +49,17 @@
       0 => 'Laravel\\Breeze\\BreezeServiceProvider',
     ),
   ),
+  'laravel/horizon' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'Laravel\\Horizon\\HorizonServiceProvider',
+    ),
+    'aliases' => 
+    array (
+      'Horizon' => 'Laravel\\Horizon\\Horizon',
+    ),
+  ),
   'laravel/sail' => 
   array (
     'providers' => 
