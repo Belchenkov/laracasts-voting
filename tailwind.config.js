@@ -22,6 +22,7 @@ module.exports = {
                 'yellow' : '#ffc73c',
                 'red' : '#ec454f',
                 'green' : '#1aab8b',
+                'red-100' : '#fee2e2',
                 'purple' : '#8b60ed',
             },
             maxWidth: {
