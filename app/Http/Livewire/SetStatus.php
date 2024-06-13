@@ -33,7 +33,7 @@ class SetStatus extends Component
             NotifyAllVoters::dispatch($this->idea);
         }
 
-        $this->emit('statusWasUpdated');
+        $this->emit('statusWasUpdated', 'Status was updated successfully!');
     }
 
     public function render(): \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Contracts\Foundation\Application
