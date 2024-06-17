@@ -69,6 +69,11 @@ class User extends Authenticatable
             .'.png';
     }
 
+    public function comments(): HasMany
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     public function isAdmin(): bool
     {
         return in_array($this->email, [

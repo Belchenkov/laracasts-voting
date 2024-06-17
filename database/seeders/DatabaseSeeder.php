@@ -7,6 +7,7 @@ use App\Models\Idea;
 use App\Models\Status;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use App\Models\Comment;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,5 +25,10 @@ class DatabaseSeeder extends Seeder
             IdeaSeeder::class,
             VoteSeeder::class,
         ]);
+
+        // Generate comments for ideas
+        foreach (Idea::all() as $idea) {
+            Comment::factory(5)->existing()->create(['idea_id' => $idea->id]);
+        }
     }
 }
