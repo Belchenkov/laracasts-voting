@@ -9,7 +9,13 @@ class IdeaComments extends Component
 {
     public $idea;
 
-    public function mount(Idea $idea)
+    protected $listeners = ['commentWasAdded'];
+
+    public function commentWasAdded(): void
+    {
+        $this->idea->refresh();
+    }
+    public function mount(Idea $idea): void
     {
         $this->idea = $idea;
     }
