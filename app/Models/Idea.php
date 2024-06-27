@@ -18,6 +18,7 @@ class Idea extends Model
     public const PAGINATION_COUNT = 10;
 
     protected $guarded = [];
+    protected $perPage = 10;
 
 
     /**
