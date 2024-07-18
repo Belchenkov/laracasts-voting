@@ -32,6 +32,7 @@ class AddComment extends Component
             'user_id' => auth()->id(),
             'idea_id' => $this->idea->id,
             'body' => $this->comment,
+            'status_id' => 1,
         ]);
 
         $this->reset('comment');
