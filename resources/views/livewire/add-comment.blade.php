@@ -11,7 +11,7 @@
                 firstComment.scrollIntoView({ behavior: 'smooth'})
             }
 
-            if (message.updateQueue[0].payload.event === 'commentWasAdded'
+            if (['commentWasAdded', 'statusWasUpdated'].includes(message.updateQueue[0].payload.event)
              && message.component.fingerprint.name === 'idea-comments') {
                 const lastComment = document.querySelector('.comment-container:last-child')
                 lastComment.scrollIntoView({ behavior: 'smooth'})

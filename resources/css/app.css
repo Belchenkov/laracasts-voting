@@ -30,6 +30,10 @@
     left: -40px;
 }
 
+.is-status-update.comment-container:last-child::after {
+    left: -41px;
+}
+
 /* remove last vertical line */
 .comment-container:last-child::after {
     position: absolute;
