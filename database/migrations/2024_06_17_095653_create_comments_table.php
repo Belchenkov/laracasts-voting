@@ -16,7 +16,7 @@ class CreateCommentsTable extends Migration
         Schema::create('comments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->foreignId('idea_id')->constrained();
+            $table->foreignId('idea_id')->constrained()->onDelete('cascade');
             $table->text('body');
             $table->integer('spam_reports')->default(0);
             $table->boolean('is_status_update')->default(false);
